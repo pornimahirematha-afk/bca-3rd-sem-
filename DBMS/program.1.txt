@@ -1,0 +1,27 @@
+CREATE DATABASE college;
+USE college;
+CREATE TABLE  student(
+id INT PRIMARY KEY,
+name VARCHAR(50),
+department VARCHAR(30),
+marks INT,
+city VARCHAR(30)
+);
+INSERT INTO student VALUES
+(1,'Akash','BCA',85,'Koppal'),
+(2,'Ravi','BCA',75,'Gangavathi'),
+(3,'Priya','BCom',90,'Koppal'),
+(4,'Manoj','BCA',60,'Yelburga'),
+(5,'Aun','BCom',80,'Koppal'),
+(6,'Kiran','BCA',95,'Gangavathi');
+SELECT*FROM student;
+SELECT UPPER(name)FROM student;
+SELECT LOWER(name)FROM student;
+SELECT name, LENGTH(name)FROM student;
+SELECT ROUND(85.678,2);
+SELECT NOW();
+SELECT COUNT(*)FROM student;
+SELECT SUM(marks)FROM student;
+SELECT AVG(marks)FROM student;
+SELECT MAX(marks)FROM student;
+SELECT MIN(marks)FROM student;
