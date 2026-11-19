@@ -1,0 +1,85 @@
+CREATE DATABASE professsorDB;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> USE professorDB;
+Database changed
+mysql> CREATE TABLE professor(
+    -> proid BIgINT,
+    -> profName VARCHAR(20),
+    -> department VARCHAR(25),
+    -> phno BIGINT
+    -> );
+Query OK, 0 rows affected (0.15 sec)
+INSERT INTO professor VALUES
+    -> (101, 'Ravi', 'Computer Science', 9876543210),
+    -> (102, 'Priya', 'Mathematics', 9876543211),
+    -> (103, 'Anil', 'Physics', 9876543212),
+    -> (104, 'Sneha', 'Chemistry', 9876543213),
+    -> (105, 'Kiran', 'Computer Science', 9876543214);
+Query OK, 5 rows affected (0.16 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM professor;
++-------+----------+------------------+------------+
+| proid | profName | department       | phno       |
++-------+----------+------------------+------------+
+|   101 | Ravi     | Computer Science | 9876543210 |
+|   102 | Priya    | Mathematics      | 9876543211 |
+|   103 | Anil     | Physics          | 9876543212 |
+|   104 | Sneha    | Chemistry        | 9876543213 |
+|   105 | Kiran    | Computer Science | 9876543214 |
++-------+----------+------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT*FROM professor
+    -> WHERE profid=101;
++-------+----------+------------------+------------+
+| proid | profName | department       | phno       |
++-------+----------+------------------+------------+
+|   101 | Ravi     | Computer Science | 9876543210 |
++-------+----------+------------------+------------+
+1 row in set (0.05 sec)
+
+mysql> UPDATE professor
+    -> SET profid = 106
+    -> WHERE profid = 101;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT*FROM professor;
++-------+----------+------------------+------------+
+| proid | profName | department       | phno       |
++-------+----------+------------------+------------+
+|   106 | Ravi     | Computer Science | 9876543210 |
+|   102 | Priya    | Mathematics      | 9876543211 |
+|   103 | Anil     | Physics          | 9876543212 |
+|   104 | Sneha    | Chemistry        | 9876543213 |
+|   105 | Kiran    | Computer Science | 9876543214 |
++-------+----------+------------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> DELETE FROM professor
+    -> WHERE proid = 102;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> SELECT*FROM professor;
++-------+----------+------------------+------------+
+| proid | profName | department       | phno       |
++-------+----------+------------------+------------+
+|   106 | Ravi     | Computer Science | 9876543210 |
+|   103 | Anil     | Physics          | 9876543212 |
+|   104 | Sneha    | Chemistry        | 9876543213 |
+|   105 | Kiran    | Computer Science | 9876543214 |
++-------+----------+------------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT*FROM professor;
++-------+----------+------------------+------------+
+| proid | profName | department       | phno       |
++-------+----------+------------------+------------+
+|   106 | Ravi     | Computer Science | 9876543210 |
+|   103 | Anil     | Physics          | 9876543212 |
+|   104 | Sneha    | Chemistry        | 9876543213 |
+|   105 | Kiran    | Computer Science | 9876543214 |
++-------+----------+------------------+------------+
+4 rows in set (0.00 sec)
